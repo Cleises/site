@@ -1,123 +1,83 @@
-/*
-    Auther: Abdelrhman Said
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.header {
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Poiret One;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  text-align: center;
+  text-shadow: 2px 1px 2px;
+}
+html {
+    height: 100%; //позволит растянуть сайт на 100% высоты
 }
 
-*:focus,
-*:active {
-    outline: none !important;
-    -webkit-tap-highlight-color: transparent;
+#wrapper {
+    min-height: 100%; //выставляем минимальную высоту в 100%
+    height: auto; // позволяем сайту тянуться если он больше по высоте
+    margin: -50px auto 0; // поднимаем сайт вверх на высоту футера, тем самым освободив место под футер
+}
+#header {
+    padding-top: 50px; //опустим содержимое хедера на высоту футера - вернув сайт на свое место 
+}
+#footer {
+    height: 50px; //задаем высоту футера
+    margin: 0 auto; //убираем подтягивание вверх которое сейчас присутствует
+}
+.header .filter {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.header .content-wrapper {
+  z-index: 2;
+}
+.header .content-wrapper .content {
+  position: relative;
+}
+.header .content-wrapper .content h1 {
+  margin: 0;
+  font-size: 5em;
+}
+.header p {
+  margin-top: 0.5em;
+  font-family: Josefin Sans, sans-serif;
+  margin-bottom: 5px;
+  font-size: 20px
+}
+.header a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-shadow: 2x 1px 2px;
+  font-size: 30px;
+}
+#particles-js {
+  height:100%;
+  width:100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+    
+ 
+  background-color: rgb(0, 0, 0);
 }
 
-html,
-body {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    place-items: center;
-    background: linear-gradient(315deg, #ffffff, #d7e1ec);
+.hdg-label-popup {
+  display: none;
+  position: absolute
 }
 
-.wrapper {
-    display: inline-flex;
-    list-style: none;
+.icon:hover~.hdg-label-popup {
+  display: block
 }
 
-.wrapper .icon {
-    position: relative;
-    background: #ffffff;
-    border-radius: 50%;
-    padding: 15px;
-    margin: 10px;
-    width: 80px;
-    height: 80px;
-    font-size: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip {
-    position: absolute;
-    top: 0;
-    font-size: 18px;
-    background: #ffffff;
-    color: #ffffff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-    position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background: #ffffff;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-    top: -50px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-    background: #1877f2;
-    color: #ffffff;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-    background: #1da1f2;
-    color: #ffffff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-    background: #ff004c;
-    color: #ffffff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-    background: #333333;
-    color: #ffffff;
-}
-
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
-    background: #cd201f;
-    color: #ffffff;
-}
