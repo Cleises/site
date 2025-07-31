@@ -1,0 +1,51 @@
+.header {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: Poiret One;
+  text-align: center;
+  text-shadow: 2px 1px 2px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+}
+.header .filter {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(а,0,0,0.4);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.header .content-wrapper {
+  z-index: 2;
+}
+.header .content-wrapper .content {
+  position: relative;
+}
+.header .content-wrapper .content h1 {
+  margin: 0;
+  font-size: 4em;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-shadow: 2x 1px 2px;
+  font-size: 30px;
+}
+#particles-js {
+  height:100%;
+  width:100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgb(0, 0, 0);
+}
+
