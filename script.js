@@ -152,45 +152,25 @@ class App extends React.Component {
             requestAnimationFrame(update);};
             requestAnimationFrame(update);;
 
-/* --- НОВИЙ КОД ПОЧАТОК --- */
-
-/**
- * Функція для генерації випадкового HEX-кольору
- * @returns {string} Випадковий колір, наприклад #FF0000
- */
 function getRandomColor() {
+ 
   return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
 }
 
-/**
- * Функція, яка знаходить екземпляр particles.js і змінює в ньому кольори
- */
 function updateParticleColor() {
-  // Перевіряємо, чи існує глобальний об'єкт particles.js
   if (window.pJSDom && window.pJSDom[0]) {
-    let pJS = window.pJSDom[0].pJS; // Отримуємо доступ до налаштувань
+    let pJS = window.pJSDom[0].pJS;
     let newColor = getRandomColor();
-
-    console.log("Змінюю колір частинок на: " + newColor);
-
-    // Оновлюємо колір самих частинок
-    pJS.particles.color.value = newColor;
     
-    // Оновлюємо колір ліній, щоб вони відповідали частинкам
-    pJS.particles.links.color = newColor;
+    console.log("Змінюю колір на: " + newColor);
 
-    // Оновлюємо колір "бульбашок" при наведенні (якщо вони є)
+    pJS.particles.color.value = newColor;
+    pJS.particles.links.color = newColor;
     if (pJS.interactivity.modes.bubble) {
       pJS.interactivity.modes.bubble.color = newColor;
     }
   }
 }
 
-// 1. Встановлюємо випадковий колір одразу при завантаженні
 updateParticleColor();
-
-// 2. Встановлюємо інтервал, який буде змінювати колір 
-// кожну хвилину (60 секунд * 1000 мілісекунд)
 setInterval(updateParticleColor, 60000);
-
-/* --- НОВИЙ КОД КІНЕЦЬ --- */
