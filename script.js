@@ -64,7 +64,7 @@ class App extends React.Component {
                     "type": "circle",
                     "stroke": {
                     "width": 6,
-                    "color": "#00BFFF" },   
+                    "color": "#a200ffff" },   
                     "polygon": {
                     "nb_sides": 4 },
                     "image": {
