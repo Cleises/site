@@ -15,20 +15,25 @@
   text-shadow: 2px 1px 2px;
 }
 html {
-    height: 100%; //позволит растянуть сайт на 100% высоты
+  margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 #wrapper {
-    min-height: 100%; //выставляем минимальную высоту в 100%
-    height: auto; // позволяем сайту тянуться если он больше по высоте
-    margin: -50px auto 0; // поднимаем сайт вверх на высоту футера, тем самым освободив место под футер
+    min-height: 100%; 
+    height: auto; 
+    margin: -50px auto 0; 
 }
+
 #header {
-    padding-top: 50px; //опустим содержимое хедера на высоту футера - вернув сайт на свое место 
+    padding-top: 50px;
 }
 #footer {
-    height: 50px; //задаем высоту футера
-    margin: 0 auto; //убираем подтягивание вверх которое сейчас присутствует
+    height: 50px; 
+    margin: 0 auto; 
 }
 .header .filter {
   height: 100%;
