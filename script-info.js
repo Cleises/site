@@ -151,3 +151,26 @@ class App extends React.Component {
                             count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;}
             requestAnimationFrame(update);};
             requestAnimationFrame(update);;
+
+function getRandomColor() {
+ 
+  return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
+
+function updateParticleColor() {
+  if (window.pJSDom && window.pJSDom[0]) {
+    let pJS = window.pJSDom[0].pJS;
+    let newColor = getRandomColor();
+    
+    console.log("Змінюю колір на: " + newColor);
+
+    pJS.particles.color.value = newColor;
+    pJS.particles.links.color = newColor;
+    if (pJS.interactivity.modes.bubble) {
+      pJS.interactivity.modes.bubble.color = newColor;
+    }
+  }
+}
+
+updateParticleColor();
+setInterval(updateParticleColor, 60000);            
